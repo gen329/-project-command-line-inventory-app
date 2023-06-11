@@ -1,13 +1,18 @@
 {
-    "name": "gens-shoe-store-inventory",
-    "version": "1.0.0",
-    "description": "An application where employees can keep track of the inventory of a store. Employees can create new items, update items, see a list of items, see details of one item and delete items.",
-    "main": "index.js",
-    "scripts": {
-      "test": ""
-    },
-    "keywords": [],
-    "author": "Genesis Lara",
-    "license": "ISC",
-    "devDependencies": {}
-  }
+  "name": "gens-shoe-store-inventory",
+  "version": "1.0.0",
+  "description": "An application where employees can keep track of the inventory of a store. Employees can create new items, update items, see a list of items, see details of one item and delete items.",
+  "main": "index.js",
+  "scripts": {
+    "index": "node index.js index",
+    "create": "node index.js create",
+    "show": "node index.js show",
+    "update": "node index.js update",
+    "destroy": "node index.js destroy",
+   },
+    "test": "" {},
+  "keywords": [],
+  "author": "Genesis Lara",
+  "license": "ISC",
+  "devDependencies": {}
+}
