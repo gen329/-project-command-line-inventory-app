@@ -13,37 +13,42 @@ const {
 const inform = console.log;
 
 function run() {
-  let writeToFile = false;
-  let updatedShoes = [];
   const action = process.argv[2];
   const shoe = process.argv[3];
+  let writeToFile = false;
+  let updatedShoes = [];
+  let updatedCart = [];
+  let allShoes = readJSONFile("./data", "shoes.json");
+  let cart = readJSONFile("./data", "cart.json");
+
   switch (action) {
     case "index":
       index(action,shoe)
       inform(action);
       break;
     case "create":
-      create(action,shoe)
+      updatedShoes = create(allShoes, shoe, process.argv[4], process.argv[5], process.argv[6])
       inform(action, shoe);
       break;
     case "show":
-      show(action,shoe)  
+      show(action,shoe)
       inform(action, shoe);
       break;
     case "update":
-      update(action,shoe)  
+      updatedShoes = update(action,shoe);
       inform(action, shoe);
       break;
     case "destroy":
-      destroy(action,shoe)
+      updatedShoes = destroy(action,shoe);
       inform(action, shoe);
+      writeToFile = true;
       break;
     case "update":
       updatedShoes = edit(shoes,shoe,process.argv[4]);
       writeToFile = true;
     case "addToCart" :
-        addToCart(cart,shoes)
-        writeJSONFile("./data", "cart.json", cart);
+        updatedCart = addToCart(cart,shoes, shoe.id);
+        writeJSONFile("./data", "cart.json", updatedCart);
         break;
     case "cartTotal" :
         inform(cartTotal(cart));
@@ -52,12 +57,12 @@ function run() {
         cancelCart();
         break;
     default :
-    inform("there was an error");
-}
+    inform("Girl, you messed up. Run it again 💅🏾");
+  };
 
-    if (writeToFile) {
+  if (writeToFile) {
     inform("updating data");
     writeJSONFile("./data", "shoes.json", updatedShoes);
-    }
-}
+  };
+};
 run();
