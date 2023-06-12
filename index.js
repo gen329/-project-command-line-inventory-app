@@ -39,11 +39,11 @@ function run() {
       inform(action, shoe);
       break;
     case "update":
-      updatedShoes = edit(shoes, shoe, process.argv[4]);
+      updatedShoes = edit(shoes,shoe,process.argv[4]);
       writeToFile = true;
     case "addToCart" :
-        addToCart(cart, shoes)
-        writeJSONFile("./data", "cart-data.json", cart);
+        addToCart(cart,shoes)
+        writeJSONFile("./data", "cart.json", cart);
         break;
     case "cartTotal" :
         inform(cartTotal(cart));
