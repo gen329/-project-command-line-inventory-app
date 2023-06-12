@@ -41,5 +41,18 @@ function show(shoes, shoesId) {
     return shoe.id + " " + shoe.name + " ";
   }
 
+function addToCart(shoes) {
+  const shoppingCart = []
+  shoes.push(shoppingCart)
+  return shoppingCart
+}
 
-module.exports = { create, destroy, edit, index, show, cart };
+function cartTotal(shoes) {
+  
+}
+
+function cancelCart (shoes) {
+  writeJSONFile("./data","cart.json",[]);
+}
+
+module.exports = { create, destroy, edit, index, show, addToCart, cartTotal, cancelCart };

@@ -6,9 +6,9 @@ const {
   index,
   show,
   addToCart,
-  cart,
+  cartTotal,
   cancelCart,
-} = require("./src/shoeController.js");
+} = require("./shoeController.js");
 
 const inform = console.log;
 
