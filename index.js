@@ -5,15 +5,18 @@ const {
   edit,
   index,
   show,
-} = require("./src/animalController.js");
+} = require("./src/shoeController.js");
 
 const inform = console.log;
 
 function run() {
+  let writeToFile = false;
+  let updatedShoes = [];
   const action = process.argv[2];
   const shoe = process.argv[3];
   switch (action) {
     case "index":
+      index(action,shoe)
       inform(action);
       break;
     case "create":
@@ -21,45 +24,37 @@ function run() {
       inform(action, shoe);
       break;
     case "show":
+      show(action,shoe)  
       inform(action, shoe);
       break;
     case "update":
+      update(action,shoe)  
       inform(action, shoe);
       break;
     case "destroy":
+      destroy(action,shoe)
       inform(action, shoe);
       break;
-  }
+    case "update":
+      updatedShoes = edit(shoes, shoe, process.argv[4]);
+      writeToFile = true;
+    case "addToCart" :
+        addToCart(cart, shoes)
+        writeJSONFile("./data", "cart-data.json", cart);
+        break;
+    case "cartTotal" :
+        inform(cartTotal(cart));
+        break;
+    case "cancelCart" :
+        cancelCart();
+        break;
+    default :
+    inform("there was an error");
+}
+
+    if (writeToFile) {
+    inform("updating data");
+    writeJSONFile("./data", "clothes-data.json", updatedShoes);
+    }
 }
 run();
-
-
-// A user can create a new item. ✅
-
-// Data to write
-
-// Convert to JSON string
-
-// Write to the JSON file
-
-// A user can see a list of all the items.
-
-// A user can see the details of one item.
-
-// A user can delete an item.
-
-// A user can update an item.
-
-// When a user performs an action like creating or deleting an item, the data file is updated correctly. If the JSON is malformed, there is some logic to prevent writing to the file and thus corrupting the data file.
-
-
-// When a user creates an item a unique id is assigned to the new item.
-
-
-// Add a cart function where a user can add items to the shopping cart and see the total price and total number of each item
-
-
-// Add a cancel cart function that empties the shopping cart.
-
-
-module.exports = {}

@@ -9,9 +9,11 @@
     "show": "node index.js show",
     "update": "node index.js update",
     "destroy": "node index.js destroy",
+    "addToCart": "node index.js addToCart",
+    "cartTotal": "node index.js cartTotal",
+    "cancelCart": "node index.js cancelCart"
    },
-    "test": "" {},
-  "keywords": [],
+   
   "author": "Genesis Lara",
   "license": "ISC",
   "devDependencies": {}
