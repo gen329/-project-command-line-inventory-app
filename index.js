@@ -5,6 +5,9 @@ const {
   edit,
   index,
   show,
+  addToCart,
+  cart,
+  cancelCart,
 } = require("./src/shoeController.js");
 
 const inform = console.log;
@@ -54,7 +57,7 @@ function run() {
 
     if (writeToFile) {
     inform("updating data");
-    writeJSONFile("./data", "clothes-data.json", updatedShoes);
+    writeJSONFile("./data", "shoes.json", updatedShoes);
     }
 }
 run();

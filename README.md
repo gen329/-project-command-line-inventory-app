@@ -20,9 +20,11 @@ In total, you must receive at least 70% to complete this project. For example, y
 1. Your GitHub repository should have a README.md file with setup instructions and a guide/cheatsheet on how to user your application (what commands are available, show some sample commands).
 1. You have a `.gitignore` that is set up to ignore at least `node_modules` and `.DS_Store` and will ignore additional files, as needed.
 1. You have a sample JSON file with some sample data. It should be an array of at least three objects. Each object should contain the following properties and at least one other property unique to your item:
-  - `name`
+
+- `name`
   - `priceInCents`
   - `inStock`
+
 1. You have a JSON file where your application will read from and write to.
 1. You have an `index.js` file that is the entry point to your application
 1. You have an updated package.json that has an appropriate `name`, and `description`. It also has your name as the `author` and it has a series of `scripts` that align with the functionality of your application. If your app requires additional packages, they are correctly set up as dependencies in this file as well.
