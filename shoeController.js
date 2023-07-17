@@ -1,4 +1,5 @@
-const { nanoid } = require("nanoid");
+const { nanoid } = import("nanoid");
+
 
 const inform = console.log
 function create(allShoes, shoeName, shoeSize, description, colorWay) {
@@ -12,7 +13,7 @@ function create(allShoes, shoeName, shoeSize, description, colorWay) {
   };
   allShoes.push(shoe);
   return allShoes;
-}l;
+};
 
 function index(shoes) {
   return shoes.map((shoe) => shoe.id + " " + shoe.name).join("\n");

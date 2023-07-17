@@ -6,7 +6,8 @@
         "style": "Sneakers",
         "colorway": "Black/Light Graphite",
         "shoeSize": "6.5",
-        "priceInCents": 8000
+        "priceInCents": 8000,
+        "inStock": true
     },
     {
         "id": "39875-029",
@@ -15,7 +16,8 @@
         "style": "Flat Skate Shoes",
         "colorway": "Black/Red",
         "shoeSize": "7.0",
-        "priceInCents": 1750
+        "priceInCents": 1750,
+        "inStock": true
     },
     {
         "id": "40845-036",
@@ -24,7 +26,8 @@
         "style": "Sneaker",
         "colorway": "Black/Yellow",
         "shoeSize": "8.5",
-        "priceInCents": 3500
+        "priceInCents": 3500,
+        "inStock": true
     }
 ]
 

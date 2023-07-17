@@ -12,9 +12,10 @@
     "addToCart": "node index.js addToCart",
     "cartTotal": "node index.js cartTotal",
     "cancelCart": "node index.js cancelCart"
-   },
-   
+  },
   "author": "Genesis Lara",
   "license": "ISC",
-  "devDependencies": {}
+  "dependencies": {
+    "nanoid": "^4.0.2"
+  }
 }
