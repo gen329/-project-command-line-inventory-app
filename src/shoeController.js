@@ -15,9 +15,10 @@ function create(allShoes, shoeName, shoeSize, description, colorWay) {
   return allShoes;
 };
 
-function index(shoes) {
+function index (shoes) {
   return shoes.map((shoe) => shoe.id + " " + shoe.name).join("\n");
 };
+
 
 function destroy(shoes, shoesId) {
   const index = shoes.findIndex((shoe) => shoe.id === shoesId);
@@ -31,7 +32,7 @@ function destroy(shoes, shoesId) {
   };
 };
 
-function edit(shoes, shoesId, updatedShoe) {
+function update(shoes, shoesId, updatedShoe) {
   const index = shoes.findIndex((shoe) => shoe.id === shoesId);
   if (index > -1) {
     shoes[index].id = shoesId;
@@ -49,8 +50,8 @@ function show(shoes, shoesId) {
   return shoe.id + " " + shoe.name + " ";
 };
 
-function addToCart(cart, allShoes, shoeId) {
-  const shoe = allShoes.find(sneaker => sneaker.id === shoeId);
+function addToCart(cart, shoes, shoeId) {
+  const shoe = shoes.find(sneaker => sneaker.id === shoeId);
   cart.push(shoe);
   return cart;
 };
@@ -66,7 +67,7 @@ function cancelCart () {
 module.exports = {
   create,
   destroy,
-  edit,
+  update,
   index,
   show,
   addToCart,

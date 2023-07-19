@@ -8,53 +8,56 @@ const {
   addToCart,
   cartTotal,
   cancelCart,
-} = require("./shoeController.js");
+} = require("./src/shoeController.js");
 
-const inform = console.log;
 
 function run() {
   const action = process.argv[2];
-  console.log(action,"action");
   const shoe = process.argv[3];
-  console.log(shoe, "shoe");
+  let shoes = readJSONFile("./data", "shoes.json");
   let writeToFile = false;
   let updatedShoes = [];
   let updatedCart = [];
-  let allShoes = readJSONFile("./data", "shoes.json");
   let cart = readJSONFile("./data", "cart.json");
-
+  
+  const inform = console.log;
+  
   switch (action) {
     case "index":
-      index(action,shoe)
-      inform(action);
+      const allShoes = index(shoes)
+      inform(allShoes);
       break;
+
     case "create":
-      updatedShoes = create(allShoes, shoe, process.argv[4], process.argv[5], process.argv[6])
-      inform(action, shoe);
+      updatedShoes = create(shoe, shoes)
+      inform(create, "this is creating");
+      writeToFile = true;
       break;
+
     case "show":
-      show(action,shoe)
-      inform(action, shoe);
+      const showShoe = show(shoe, shoes)
+      inform(showShoe, "showing shoe");
       break;
-    case "update":
-      updatedShoes = update(action,shoe);
-      inform(action, shoe);
-      break;
+
     case "destroy":
-      updatedShoes = destroy(action,shoe);
-      inform(action, shoe);
+      updatedShoes = destroy(shoes,shoe, process.argv[4]);
       writeToFile = true;
       break;
+
     case "update":
-      updatedShoes = edit(shoes,shoe,process.argv[4]);
+      updatedShoes = update(shoes,shoe,process.argv[4]);
       writeToFile = true;
+      break;
+
     case "addToCart" :
         updatedCart = addToCart(cart,shoes, shoe.id);
         writeJSONFile("./data", "cart.json", updatedCart);
         break;
+
     case "cartTotal" :
         inform(cartTotal(cart));
         break;
+
     case "cancelCart" :
         cancelCart();
         break;

@@ -1,15 +1,5 @@
 [
     {
-        "id": "11110-010",
-        "name": "Black Cats",
-        "description": "Casual everyday wear",
-        "style": "Sneakers",
-        "colorway": "Black/Light Graphite",
-        "shoeSize": "6.5",
-        "priceInCents": 8000,
-        "inStock": true
-    },
-    {
         "id": "39875-029",
         "name": "Revenge X Storm",
         "description": "Skating shoes with velcro straps",
@@ -28,7 +18,16 @@
         "shoeSize": "8.5",
         "priceInCents": 3500,
         "inStock": true
+    },
+    {
+        "id": "40845-036",
+        "name": "Thunder",
+        "description": "Casual everyday wear",
+        "style": "Sneaker",
+        "colorway": "Black/Yellow",
+        "shoeSize": "8.5",
+        "priceInCents": 3500,
+        "inStock": true
     }
+
 ]
-
-
