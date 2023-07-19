@@ -14,7 +14,9 @@ const inform = console.log;
 
 function run() {
   const action = process.argv[2];
+  console.log(action,"action");
   const shoe = process.argv[3];
+  console.log(shoe, "shoe");
   let writeToFile = false;
   let updatedShoes = [];
   let updatedCart = [];
