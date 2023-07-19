@@ -1,10 +1,11 @@
 const { nanoid } = import("nanoid");
+const { writeJSONFile } = require("./helpers.js");
 
 
 const inform = console.log
 function create(allShoes, shoeName, shoeSize, description, colorWay) {
   const shoe = {
-    id: nanoid(6),
+    id: nanoid(),
     name: shoeName,
     priceInCents: Math.floor(Math.random() * (8000-2000)+2000),
     size: shoeSize,
@@ -46,22 +47,24 @@ function update(shoes, shoesId, updatedShoe) {
 };
 
 function show(shoes, shoesId) {
-  const shoe = shoes.find((shoe) => shoe.id === shoesId);
-  return shoe.id + " " + shoe.name + " ";
+  const showShoe = shoes.find((shoe) => shoe.id === shoesId);
+  return showShoe.id + " " + showShoe.name + " " + showShoe.priceInCent + "price";
 };
 
 function addToCart(cart, shoes, shoeId) {
-  const shoe = shoes.find(sneaker => sneaker.id === shoeId);
-  cart.push(shoe);
+  const currentShoe = shoes.find(shoe => shoe.id === shoeId);
+  console.log('cart: ', cart)
+  cart.push(currentShoe);
   return cart;
 };
 
 function cartTotal(cart) {
-  return cart.reduce((previousValule,currentValue) => Number(previousValule.priceInCents) + Number(currentValue.priceInCents));
-};
+  const total = cart.reduce((a,b) => a.priceInCents + b.priceInCents);
+  return total;
+}
 
 function cancelCart () {
-  writeJSONFile("./data","cart.json",[]);
+  writeJSONFile("./data", "cart.json",[]);
 };
 
 module.exports = {

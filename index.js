@@ -1,8 +1,8 @@
 const { writeJSONFile, readJSONFile } = require("./src/helpers");
-const {
+const { 
   create,
   destroy,
-  edit,
+  update,
   index,
   show,
   addToCart,
@@ -50,7 +50,7 @@ function run() {
       break;
 
     case "addToCart" :
-        updatedCart = addToCart(cart,shoes, shoe.id);
+        updatedCart = addToCart(cart,shoes, shoe);
         writeJSONFile("./data", "cart.json", updatedCart);
         break;
 

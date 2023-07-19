@@ -10,14 +10,15 @@
         "inStock": true
     },
     {
-        "id": "40845-036",
-        "name": "Thunder",
+        "id": "11110-010",
+        "name": "Black Cats",
         "description": "Casual everyday wear",
-        "style": "Sneaker",
-        "colorway": "Black/Yellow",
-        "shoeSize": "8.5",
-        "priceInCents": 3500,
+        "style": "Sneakers",
+        "colorway": "Black/Light Graphite",
+        "shoeSize": "6.5",
+        "priceInCents": 8000,
         "inStock": true
+
     },
     {
         "id": "40845-036",
