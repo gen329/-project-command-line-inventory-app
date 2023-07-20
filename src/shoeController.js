@@ -53,7 +53,6 @@ function show(shoes, shoesId ) {
 
 function addToCart(cart, shoes, shoeId) {
   const currentShoe = shoes.find(shoe => shoe.id === shoeId);
-  console.log('cart: ', cart)
   cart.push(currentShoe);
   return cart;
 };
