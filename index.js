@@ -35,8 +35,8 @@ function run() {
       break;
 
     case "show":
-      const showShoe = show(shoe, shoes)
-      inform(showShoe, "showing shoe");
+      show(shoes, shoe)
+      inform(shoes, "showing shoe");
       break;
 
     case "destroy":

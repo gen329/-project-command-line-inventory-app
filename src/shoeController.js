@@ -1,21 +1,19 @@
-const naniod = import("nanoid");
 const { writeJSONFile } = require("./helpers.js");
-
+const { nanoid } = import("nanoid");
 
 function index (shoes) {
   return shoes.map((shoe) => shoe.id + " " + shoe.name).join("\n");
 };
 
-
 function create(allShoes, shoeName, shoeSize, description, colorWay) {
   const shoe = {
-    id: naniod.nanoid,
+    id: nanoid(6),
     name: shoeName,
     priceInCents: Math.floor(Math.random() * (8000-2000)+2000),
     shoeSize: shoeSize,
     description: description,
     colorWay: colorWay,
-    inStock: true
+    inStock: true,
   };
   allShoes.push(shoe);
   return allShoes;
@@ -48,9 +46,9 @@ function update(shoes, shoesId, updatedShoe) {
   };
 };
 
-function show(shoes, shoesId) {
+function show(shoes, shoesId ) {
   const showShoe = shoes.find((shoe) => shoe.id === shoesId);
-  return showShoe.id + " " + showShoe.name + " " + showShoe.priceInCent + "price";
+  return showShoe
 };
 
 function addToCart(cart, shoes, shoeId) {

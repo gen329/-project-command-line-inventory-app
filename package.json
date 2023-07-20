@@ -16,6 +16,6 @@
   "author": "Genesis Lara",
   "license": "ISC",
   "dependencies": {
-    "nanoid": "^4.0.2"
+    "nanoid": "^3.3.6"
   }
 }
